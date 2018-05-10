@@ -1,0 +1,22 @@
+[
+ {
+    "vcName": "LPHomeController",
+    "title": "首页",
+    "imageName": "tabbar_home"
+ },
+ {
+     "vcName": "LPMessageController",
+     "title": "消息",
+     "imageName": "tabbar_message_center"
+ },
+ {
+     "vcName": "LPDiscoverController",
+     "title": "广场",
+     "imageName": "tabbar_discover"
+ },
+ {
+     "vcName": "LPProfileController",
+     "title": "我",
+     "imageName": "tabbar_profile"
+ }
+ ]

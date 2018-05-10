@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="lOZ-m4-9CH">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--首页-->
+        <scene sceneID="MgL-0G-b9J">
+            <objects>
+                <navigationController id="lOZ-m4-9CH" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="首页" image="tabbar_home" selectedImage="tabbar_home_highlighted" id="d0E-NP-ScF"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TWv-BK-AaI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="wEg-29-hZ1" kind="relationship" relationship="rootViewController" id="0i0-gD-TQA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nf6-20-2CU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1214" y="-800"/>
+        </scene>
+        <!--首页-->
+        <scene sceneID="9VS-Wh-tPU">
+            <objects>
+                <viewController id="wEg-29-hZ1" customClass="LPHomeController" customModule="LPStatus" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Amk-k7-0vf"/>
+                        <viewControllerLayoutGuide type="bottom" id="EJY-rV-ETn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FTV-Nk-ZQA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mdN-07-0fF">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="wEg-29-hZ1" id="NcE-E0-1rp"/>
+                                    <outlet property="delegate" destination="wEg-29-hZ1" id="h41-Js-BYO"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mdN-07-0fF" firstAttribute="top" secondItem="Amk-k7-0vf" secondAttribute="bottom" id="M8M-O7-7ba"/>
+                            <constraint firstItem="EJY-rV-ETn" firstAttribute="top" secondItem="mdN-07-0fF" secondAttribute="bottom" id="R1z-zB-HoT"/>
+                            <constraint firstItem="mdN-07-0fF" firstAttribute="leading" secondItem="FTV-Nk-ZQA" secondAttribute="leading" id="rDd-ZC-gZ3"/>
+                            <constraint firstAttribute="trailing" secondItem="mdN-07-0fF" secondAttribute="trailing" id="rmz-mn-jhe"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="首页" id="Pkx-YT-lhX"/>
+                    <connections>
+                        <outlet property="homeTableView" destination="mdN-07-0fF" id="n6J-LI-mhJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e4q-XL-voW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-300" y="-800"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="tabbar_home" width="30" height="30"/>
+        <image name="tabbar_home_highlighted" width="30" height="30"/>
+    </resources>
+</document>
