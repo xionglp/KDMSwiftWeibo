@@ -4,7 +4,7 @@
 //
 //  Created by xlp on 2016/12/14.
 //  Copyright © 2016年 xlp. All rights reserved.
-//  初始化
+//  初始化3232
 
 ///Users/xiongluping/Library/Developer/CoreSimulator/Devices/2739A010-BCAF-46E7-B5E8-AC0F355F7400/data/Containers/Data/Application/D88D60CD-3069-42C9-9DC4-90371220338B/Documents/
 
