@@ -85,7 +85,7 @@ extension LPNetworkingTools {
     }
 }
 
-// MARK: - 请求首页微博数据
+// MARK: - 请求首页微博数据  //escaping 转义
 extension LPNetworkingTools {
     func requestHomeStatuesData(accessToken : String, finished : @escaping(_ result : [[String : AnyObject]]?, _ error : NSError?) -> ()) -> () {
         

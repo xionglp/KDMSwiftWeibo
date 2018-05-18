@@ -25,12 +25,12 @@ import UIKit
         if !isLogin {
             return
         }
-        
         setupCustomNavigationBarItem() //自定义导航栏按钮
         requestStatuesData() //请求首页数据
-        
-        self.homeTableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
+    
         self.automaticallyAdjustsScrollViewInsets = false
+        homeTableView.estimatedRowHeight = 500 //估计高度
+        homeTableView.rowHeight = UITableViewAutomaticDimension //自动计算
     }
 }
 
@@ -64,15 +64,14 @@ extension LPHomeController{
 extension LPHomeController : UITableViewDataSource,UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.statusArr.count
+        return statusArr.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         /// 定义一个cell
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellID)
-        let statusText = self.statusArr[indexPath.row].sourceText
-        cell?.textLabel?.text = statusText
-        return cell!
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellID)! as! LPHomeTableViewCell
+        cell.viewModel = self.statusArr[indexPath.row]
+        return cell
     }
     
 }

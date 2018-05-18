@@ -5,6 +5,7 @@
 //  Created by xlp on 2017/5/4.
 //  Copyright © 2017年 xlp. All rights reserved.
 //  微博视图模型
+//  MVVM设计模式， VM=ViewModel代表的是视图模型，对模型数据的封装和处理
 
 import UIKit
 
@@ -13,10 +14,12 @@ class LPHomeStatusViewModel: NSObject {
     var homeStatus : LPHomeStatues?
     
     // MARK: - 属性的处理
-    var sourceText : String?       // 来源
-    var created_at_text : String?  // 发布时间
-    var verifiedImage : UIImage?   // 微博认证
-    var vipImage : UIImage?        // 会员等级
+    var sourceText: String?       // 来源
+    var created_at_text: String?  // 发布时间
+    var verifiedImage: UIImage?   // 微博认证
+    var vipImage: UIImage?        // 会员等级
+    var iconImageUrl: NSURL?        //头像路径
+    
     
     init(homeStatus: LPHomeStatues) {
         super.init()
@@ -25,14 +28,11 @@ class LPHomeStatusViewModel: NSObject {
         
         // 1.来源处理
         if let source = homeStatus.source, source != "" {
-            
             // "source": "<a href="http://weibo.com" rel="nofollow">新浪微博</a>"
             let startLocation = (source as NSString).range(of: ">").location + 1
             let sourceLenght = (source as NSString).range(of: "</").location
             let locationText = sourceLenght - startLocation
-            
             let range = NSRange(location: startLocation, length: locationText)
-            
             sourceText = (source as NSString).substring(with: range)
         }
         
@@ -61,6 +61,11 @@ class LPHomeStatusViewModel: NSObject {
             default:
                 verifiedImage = nil
             }
+        }
+        
+        //5.处理头像
+        if let profileImageUrl = homeStatus.statusUser?.profile_image_url {
+            iconImageUrl = NSURL(string: profileImageUrl)
         }
     }
 

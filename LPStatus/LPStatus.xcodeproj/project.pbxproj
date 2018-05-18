@@ -41,6 +41,7 @@
 		125C21431EB17FAC0002F7B9 /* LPNetworkingTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125C21421EB17FAC0002F7B9 /* LPNetworkingTools.swift */; };
 		127F19901E08D178003CF9F3 /* MainVCSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = 127F198F1E08D178003CF9F3 /* MainVCSettings.json */; };
 		128BC1421E0EC2BC00D69F8E /* UIBarButtonItem-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128BC1411E0EC2BC00D69F8E /* UIBarButtonItem-Extension.swift */; };
+		12D80F6220AEBCE2005B9983 /* LPHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D80F6120AEBCE2005B9983 /* LPHomeTableViewCell.swift */; };
 		12EB4F4D1EB389FB00A43391 /* LPWelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EB4F4B1EB389FB00A43391 /* LPWelcomeController.swift */; };
 		12EB4F4E1EB389FB00A43391 /* LPWelcomeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12EB4F4C1EB389FB00A43391 /* LPWelcomeController.xib */; };
 		80BDA9A0D46310FAB1835BD9 /* Pods_LPStatus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24BAD135CD276E033C8953EB /* Pods_LPStatus.framework */; };
@@ -84,6 +85,7 @@
 		125C21421EB17FAC0002F7B9 /* LPNetworkingTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LPNetworkingTools.swift; path = ../Main/LPNetworkingTools.swift; sourceTree = "<group>"; };
 		127F198F1E08D178003CF9F3 /* MainVCSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MainVCSettings.json; sourceTree = "<group>"; };
 		128BC1411E0EC2BC00D69F8E /* UIBarButtonItem-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-Extension.swift"; sourceTree = "<group>"; };
+		12D80F6120AEBCE2005B9983 /* LPHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPHomeTableViewCell.swift; sourceTree = "<group>"; };
 		12EB4F4B1EB389FB00A43391 /* LPWelcomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPWelcomeController.swift; sourceTree = "<group>"; };
 		12EB4F4C1EB389FB00A43391 /* LPWelcomeController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LPWelcomeController.xib; sourceTree = "<group>"; };
 		24BAD135CD276E033C8953EB /* Pods_LPStatus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LPStatus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -174,6 +176,7 @@
 				120D176F1E0F78DC00C323A3 /* LPPopoverController.swift */,
 				120D17701E0F78DC00C323A3 /* LPPopoverController.xib */,
 				120D17731E0F997300C323A3 /* LPPresentationController.swift */,
+				12D80F6120AEBCE2005B9983 /* LPHomeTableViewCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 				1224B1FE1EB977130009057A /* LPHomeStatues.swift in Sources */,
 				120D176E1E0F746E00C323A3 /* LPNaviCustomTItleButton.swift in Sources */,
 				1224B2201EB9D8D40009057A /* NSDate-Extension.swift in Sources */,
+				12D80F6220AEBCE2005B9983 /* LPHomeTableViewCell.swift in Sources */,
 				122726DE1E0140C700D56D22 /* LPProfileController.swift in Sources */,
 				122A6DE01EBACCAF008777E7 /* LPHomeStatusViewModel.swift in Sources */,
 				120D17741E0F997300C323A3 /* LPPresentationController.swift in Sources */,

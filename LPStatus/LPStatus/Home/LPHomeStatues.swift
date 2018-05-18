@@ -11,17 +11,15 @@ import UIKit
 class LPHomeStatues: NSObject {
     
     // MARK:- 属性
-    var created_at : String?                // 微博创建时间
-    var source : String?                    // 微博来源
-    var text : String?                      // 微博的正文
-    var mid : Int = 0                       // 微博的ID
-    var statusUser : LPHomeUser?            // 微博用户
+    var created_at: String?                // 微博创建时间
+    var source: String?                    // 微博来源
+    var text: String?                      // 微博的正文
+    var mid: Int = 0                       // 微博的ID
+    var statusUser: LPHomeUser?            // 微博用户
     
     // MARK: - 方法
     convenience init(dict: [String : AnyObject]) {
         self.init()
-        
-        // KVC
         setValuesForKeys(dict)
         
         // 将微博用户字典转成用户模型
