@@ -6,6 +6,9 @@
 //  Copyright © 2016年 xlp. All rights reserved.
 //  首页控制器
 
+//  加载微博的图片， 先获取数据， 将数据保存在一个组数中【NSURL】
+//  计算picView，collectionView的尺寸， 添加collectionViewCell并附上相应的数据
+
 import UIKit
 
  class LPHomeController: LPBaseVisitorController{

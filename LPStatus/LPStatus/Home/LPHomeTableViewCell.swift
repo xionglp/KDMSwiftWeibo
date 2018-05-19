@@ -9,10 +9,18 @@
 import UIKit
 import SDWebImage
 
+private let mainMargin: CGFloat = 15
+private let picMargin: CGFloat = 10
+private let imageWH = (UIScreen.main.bounds.width - 2 * (mainMargin + picMargin)) / 3
+
 class LPHomeTableViewCell: UITableViewCell {
     
     //MARK: -属性
     @IBOutlet weak var contentWCons: NSLayoutConstraint!
+    @IBOutlet weak var picViewWCons: NSLayoutConstraint!
+    @IBOutlet weak var picViewHCons: NSLayoutConstraint!
+    @IBOutlet weak var picCollectionView: LPHomePicCollectionView!
+    
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -27,7 +35,7 @@ class LPHomeTableViewCell: UITableViewCell {
             guard let viewModel = viewModel else {
                 return
             }
-            iconImageView.sd_setImage(with:nil, placeholderImage: UIImage(named: "avatar_default_small"))
+            iconImageView .sd_setImage(with: viewModel.iconImageUrl! as URL, placeholderImage: UIImage(named: "avatar_default_small"))
             avatarImageView.image = viewModel.verifiedImage
             membersImageView.image = viewModel.vipImage
             nameLabel.text = viewModel.homeStatus?.statusUser?.screen_name
@@ -35,6 +43,14 @@ class LPHomeTableViewCell: UITableViewCell {
             sourceLabel.text = viewModel.sourceText
             contentLabel.text = viewModel.homeStatus?.text
             nameLabel.textColor = viewModel.vipImage == nil ? UIColor.black : UIColor.orange
+            
+            //根据配图的个数动态计算picView的尺寸
+            let picSize = calculatePicViewSize(count: viewModel.picUrls.count)
+            picViewWCons.constant = picSize.width
+            picViewHCons.constant = picSize.height
+            //设置配图数据
+            picCollectionView.picurls = viewModel.picUrls
+            
         }
     }
     
@@ -42,8 +58,11 @@ class LPHomeTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        self.contentWCons.constant = UIScreen.main.bounds.width - (2 * 15)
+        self.contentWCons.constant = UIScreen.main.bounds.width  - (2 * mainMargin)
         
+        //设置item的大小
+        let layout = picCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        layout.itemSize = CGSize(width:imageWH, height:imageWH)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -52,4 +71,26 @@ class LPHomeTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+}
+
+extension LPHomeTableViewCell {
+     fileprivate func calculatePicViewSize(count: Int) -> CGSize {
+        //没有配图
+        if count == 0 {
+            return CGSize(width:0, height:0)
+        }
+        
+        //四张配图 展示田字格
+        if count == 4 {
+            let picViewWH = imageWH * 2 + picMargin + 1
+            return CGSize(width:picViewWH, height:picViewWH)
+        }
+        
+        //其他张配图
+        //计算行数
+        let rows = CGFloat((count - 1) / 3 + 1)
+        let picViewH = rows * imageWH + (rows - 1) * picMargin
+        let picViewW = UIScreen.main.bounds.width - 2 * mainMargin
+        return CGSize(width: picViewW, height: picViewH)
+    }
 }

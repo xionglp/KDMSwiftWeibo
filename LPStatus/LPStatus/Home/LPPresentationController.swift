@@ -12,7 +12,6 @@ class LPPresentationController: UIPresentationController {
     
     //MARK: - 懒加载
     lazy var maskView : UIView = UIView()
-    
     lazy var naviBarBtn : LPNaviCustomTItleButton = LPNaviCustomTItleButton()
     
     //MARK: - 系统回调函数
@@ -23,8 +22,6 @@ class LPPresentationController: UIPresentationController {
         
         setupMaskView()
     }
-    
-
 }
 
 // MARK: - 设置UI界面

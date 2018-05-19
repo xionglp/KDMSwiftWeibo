@@ -15,6 +15,7 @@ import Bugly
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var userAccount: LPUserAccount?
     
     // 1.计算属性， 判断是否有登陆过， 登陆过， 进来显示欢迎界面，然后再显示主界面，
     // 2.没有登录过， 直接显示Main控制器，到访客视图
@@ -33,6 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = defaultController
         window?.makeKeyAndVisible()
+        
         return true
     }
     

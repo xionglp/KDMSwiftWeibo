@@ -18,8 +18,8 @@ class LPHomeStatusViewModel: NSObject {
     var created_at_text: String?  // 发布时间
     var verifiedImage: UIImage?   // 微博认证
     var vipImage: UIImage?        // 会员等级
-    var iconImageUrl: NSURL?        //头像路径
-    
+    var iconImageUrl: NSURL?      // 头像路径
+    var picUrls: [NSURL] = [NSURL]()  // 微博的配图
     
     init(homeStatus: LPHomeStatues) {
         super.init()
@@ -66,6 +66,17 @@ class LPHomeStatusViewModel: NSObject {
         //5.处理头像
         if let profileImageUrl = homeStatus.statusUser?.profile_image_url {
             iconImageUrl = NSURL(string: profileImageUrl)
+        }
+        
+        //6.处理微博的配图
+        if let pic_urls = homeStatus.pic_urls {
+            for pic_urlDict in pic_urls {
+                guard let pic_url = pic_urlDict["thumbnail_pic"] else {
+                    continue
+                }
+                let url = NSURL(string: pic_url)!
+                picUrls.append(url)
+            }
         }
     }
 
