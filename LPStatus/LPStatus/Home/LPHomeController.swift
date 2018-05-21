@@ -10,6 +10,8 @@
 //  计算picView，collectionView的尺寸， 添加collectionViewCell并附上相应的数据
 
 import UIKit
+import SDWebImage
+import MJRefresh
 
  class LPHomeController: LPBaseVisitorController{
 
@@ -20,6 +22,7 @@ import UIKit
     fileprivate lazy var naviTitleBtn : LPNaviCustomTItleButton = LPNaviCustomTItleButton()
     fileprivate lazy var popoverVc : LPPopoverController = LPPopoverController()
     fileprivate lazy var statusArr : [LPHomeStatusViewModel] = [LPHomeStatusViewModel]()
+    fileprivate lazy var tipLabel: UILabel = UILabel()
 
     // MARK: - 系统回调函数
     override func viewDidLoad() {
@@ -29,36 +32,73 @@ import UIKit
             return
         }
         setupCustomNavigationBarItem() //自定义导航栏按钮
-        requestStatuesData() //请求首页数据
-    
+        
         self.automaticallyAdjustsScrollViewInsets = false
         homeTableView.estimatedRowHeight = 500 //估计高度
         homeTableView.rowHeight = UITableViewAutomaticDimension //自动计算
+        
+        //添加下拉刷新控件
+        setupRefreshHeaderView()
+        setupRefreshFooterView()
+        setupTipLabel()
     }
 }
 
 // MARK: - 请求数据
 extension LPHomeController{
-    fileprivate func requestStatuesData(){
-        // 1. 显示请求微博数据
-        // 2. 将json数据转成模型对象
-        // 3. 模型对象的时间和来源属性处理
+    fileprivate func requestStatuesData(loadNewData: Bool){
         
+        // 获取since_id/max_id, 加载最新数据和更多数据要用到
+        var since_id = 0
+        var max_id = 0
+        if loadNewData {
+            since_id = statusArr.first?.homeStatus?.mid ?? 0
+        } else {
+            max_id = statusArr.last?.homeStatus?.mid ?? 0
+            max_id = max_id == 0 ? 0 : (max_id - 1)
+        }
+
         guard let accessToken = LPUserAccountViewModel.shareInstance.account?.access_token else {
             return
         }
         
-        LPNetworkingTools.shareInstance.requestHomeStatuesData(accessToken: accessToken) { (resultData, errorData) in
+        LPNetworkingTools.shareInstance.requestHomeStatuesData(accessToken: accessToken, since_id: since_id, max_id: max_id) { (resultData, error) in
+
+            self.homeTableView.mj_header.endRefreshing()
+            self.homeTableView.mj_footer.endRefreshing()
             guard let requestData = resultData else {
                 return
             }
-            //请求数据处理， 将后台获取的json数据转换成模型数据
+            var tempStatus: [LPHomeStatusViewModel] = [LPHomeStatusViewModel]()
             for statusDict in requestData {
                 let status = LPHomeStatues(dict: statusDict)
                 let statusViewModel = LPHomeStatusViewModel(homeStatus: status)
-                self.statusArr.append(statusViewModel)
+                tempStatus.append(statusViewModel)
             }
+            
+            if loadNewData {
+                self.statusArr = tempStatus + self.statusArr
+            }else {
+                self.statusArr += tempStatus
+            }
+            
+            //显示顶部提示框
+            self.showTipLabel(count: tempStatus.count)
             self.homeTableView.reloadData()
+        }
+    }
+    
+    fileprivate func showTipLabel(count :Int){
+        tipLabel.isHidden = false
+        tipLabel.text = count == 0 ? "没有新数据" : "\(count)条新数据"
+        UIView .animate(withDuration: 1.0, animations: {
+            self.tipLabel.transform = CGAffineTransform.init(translationX: 0, y: 35)
+        }) { (_) in
+            UIView .animate(withDuration: 1.0, delay: 1.5, options: [], animations: {
+                self.tipLabel.transform = CGAffineTransform.identity
+            }, completion: { (_) in
+                self.tipLabel.isHidden = true
+            })
         }
     }
 }
@@ -89,6 +129,34 @@ extension LPHomeController{
         naviTitleBtn .addTarget(self, action: #selector(LPHomeController.clickNaviTitleButton(titleBtn:)), for: .touchUpInside)
         navigationItem.titleView = naviTitleBtn
     }
+    
+    fileprivate func setupRefreshHeaderView(){
+        guard let header = MJRefreshNormalHeader.init(refreshingTarget: self, refreshingAction: #selector(LPHomeController.loadNewStatuses)) else {
+            return
+        }
+        header.setTitle("下拉刷新", for: .idle)
+        header.setTitle("释放更新", for: .pulling)
+        header.setTitle("加载中...", for: .refreshing)
+        homeTableView.mj_header = header
+        homeTableView.mj_header.beginRefreshing()
+    }
+    
+    fileprivate func setupRefreshFooterView(){
+        guard let footer = MJRefreshAutoFooter.init(refreshingTarget: self, refreshingAction: #selector(LPHomeController.loadMoreStatues)) else {
+            return
+        }
+        homeTableView.mj_footer = footer
+    }
+    
+    fileprivate func setupTipLabel(){
+        navigationController?.view .insertSubview(tipLabel, belowSubview: (navigationController?.navigationBar)!)
+        tipLabel.frame = CGRect.init(x: 0, y: 64 - 35, width: UIScreen.main.bounds.width, height: 35)
+        tipLabel.backgroundColor = UIColor.orange
+        tipLabel.textColor = UIColor.white
+        tipLabel.font = UIFont.systemFont(ofSize: 14)
+        tipLabel.textAlignment = NSTextAlignment.center
+        tipLabel.isHidden = true
+    }
 }
 
 // MARK: - 事件监听函数
@@ -99,6 +167,14 @@ extension LPHomeController {
         popoverVc.transitioningDelegate = self
         present(popoverVc, animated: true, completion: nil)
         
+    }
+    
+    @objc fileprivate func loadNewStatuses(){
+        requestStatuesData(loadNewData: true)
+    }
+    
+    @objc fileprivate func loadMoreStatues(){
+        requestStatuesData(loadNewData: false)
     }
 }
 

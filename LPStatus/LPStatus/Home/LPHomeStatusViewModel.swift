@@ -68,8 +68,11 @@ class LPHomeStatusViewModel: NSObject {
             iconImageUrl = NSURL(string: profileImageUrl)
         }
         
+        //显示转发微博的配图，
+        //当有转发微博的配图的时候， 就没有原创微博的配图， 俩个只能显示一个
+        let tepPics = homeStatus.pic_urls?.count == 0 ? homeStatus.retweeted_status?.pic_urls : homeStatus.pic_urls
         //6.处理微博的配图
-        if let pic_urls = homeStatus.pic_urls {
+        if let pic_urls = tepPics {
             for pic_urlDict in pic_urls {
                 guard let pic_url = pic_urlDict["thumbnail_pic"] else {
                     continue

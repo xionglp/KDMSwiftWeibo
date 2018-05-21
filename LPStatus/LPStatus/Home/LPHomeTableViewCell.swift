@@ -19,7 +19,9 @@ class LPHomeTableViewCell: UITableViewCell {
     @IBOutlet weak var contentWCons: NSLayoutConstraint!
     @IBOutlet weak var picViewWCons: NSLayoutConstraint!
     @IBOutlet weak var picViewHCons: NSLayoutConstraint!
+    @IBOutlet weak var BottomMarginCons: NSLayoutConstraint!
     @IBOutlet weak var picCollectionView: LPHomePicCollectionView!
+    @IBOutlet weak var retweetTopCons: NSLayoutConstraint!
     
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var avatarImageView: UIImageView!
@@ -28,6 +30,8 @@ class LPHomeTableViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var sourceLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
+    @IBOutlet weak var retweetLabel: UILabel!
+    @IBOutlet weak var retweetView: UIView!
     
     var viewModel: LPHomeStatusViewModel? {
         //监听属性的变化， 相当于oc中的重写setter方法
@@ -48,8 +52,27 @@ class LPHomeTableViewCell: UITableViewCell {
             let picSize = calculatePicViewSize(count: viewModel.picUrls.count)
             picViewWCons.constant = picSize.width
             picViewHCons.constant = picSize.height
+            BottomMarginCons.constant = viewModel.picUrls.count == 0 ? 1 : 15
             //设置配图数据
             picCollectionView.picurls = viewModel.picUrls
+            
+            //转发微博的正文
+            if viewModel.homeStatus?.retweeted_status != nil {
+                if let screenName = viewModel.homeStatus?.retweeted_status?.statusUser?.screen_name, let retweetText = viewModel.homeStatus?.retweeted_status?.text {
+                    retweetLabel.text = "@" + "\(screenName): " + retweetText
+                }else{
+                    retweetLabel.text = nil
+                }
+                retweetTopCons.constant = 15
+                picCollectionView.backgroundColor = UIColor.init(red: 250, green: 250, blue: 250, alpha: 0)
+            }else{
+                retweetLabel.text = nil
+                retweetTopCons.constant = 0
+                picCollectionView.backgroundColor = UIColor.white
+            }
+            
+            //设置转发微博的背景
+            retweetView.isHidden = viewModel.homeStatus?.retweeted_status != nil ? false : true
             
         }
     }

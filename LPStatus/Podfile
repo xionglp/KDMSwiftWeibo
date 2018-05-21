@@ -7,6 +7,7 @@ pod 'SDWebImage'
 pod 'MBProgressHUD'
 pod 'SnapKit'
 pod 'SVProgressHUD'
+pod 'MJRefresh'
 
 #bug统计
 pod 'Bugly', '~> 2.4.8'
