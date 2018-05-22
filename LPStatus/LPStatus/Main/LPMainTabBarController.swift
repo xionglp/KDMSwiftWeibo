@@ -42,7 +42,7 @@ extension LPMainTabBarController {
     // swift中 函数前面声明 fileprivate，则该函数不会被加到方法列表中
     // 如果在前面加上 @objc，则遵循oc的属性， 该函数会被加载到方法列表中
     @objc fileprivate func addclickComposeBtn(){
-        let composeVc = LPComposeViewController()
+        let composeVc = LPComposePublicController()
         composeVc.view.backgroundColor = UIColor.white
         let composeNavc = UINavigationController.init(rootViewController: composeVc)
         self .present(composeNavc, animated: true, completion: nil)
