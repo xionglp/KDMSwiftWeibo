@@ -4,7 +4,7 @@
 //
 //  Created by xlp on 2016/12/14.
 //  Copyright © 2016年 xlp. All rights reserved.
-//  初始化3232
+//
 
 ///Users/xiongluping/Library/Developer/CoreSimulator/Devices/2739A010-BCAF-46E7-B5E8-AC0F355F7400/data/Containers/Data/Application/D88D60CD-3069-42C9-9DC4-90371220338B/Documents/
 
@@ -25,7 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return isLogin ? LPWelcomeController () : UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()!
     }
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {        //程序启动完加载此方法
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        //程序启动完加载此方法
 
 //        Bugly.start(withAppId: "defca9f64f")//腾讯bugly错误统计
         

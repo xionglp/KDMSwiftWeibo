@@ -25,6 +25,7 @@ import MJRefresh
     fileprivate lazy var tipLabel: UILabel = UILabel()
 
     // MARK: - 系统回调函数
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

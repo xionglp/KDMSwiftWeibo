@@ -15,6 +15,8 @@
 		1211BF041E0CF68900DDFA05 /* LPVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1211BF031E0CF68900DDFA05 /* LPVisitorView.swift */; };
 		1211BF061E0CF6BF00DDFA05 /* LPVisitorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1211BF051E0CF6BF00DDFA05 /* LPVisitorView.xib */; };
 		1211BF2B1E0D16AB00DDFA05 /* LPBaseVisitorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1211BF2A1E0D16AB00DDFA05 /* LPBaseVisitorController.swift */; };
+		1212F84F20B3A82200051323 /* LPComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1212F84E20B3A82200051323 /* LPComposeViewController.swift */; };
+		1212F85120B3BF7600051323 /* LPComposeTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1212F85020B3BF7600051323 /* LPComposeTitleView.swift */; };
 		1224B1FE1EB977130009057A /* LPHomeStatues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1224B1FD1EB977130009057A /* LPHomeStatues.swift */; };
 		1224B2201EB9D8D40009057A /* NSDate-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1224B21F1EB9D8D40009057A /* NSDate-Extension.swift */; };
 		122726BD1E011B0700D56D22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122726BC1E011B0700D56D22 /* AppDelegate.swift */; };
@@ -42,6 +44,7 @@
 		127F19901E08D178003CF9F3 /* MainVCSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = 127F198F1E08D178003CF9F3 /* MainVCSettings.json */; };
 		128AA6E120B02566001D2D59 /* LPHomePicCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128AA6E020B02566001D2D59 /* LPHomePicCollectionView.swift */; };
 		128BC1421E0EC2BC00D69F8E /* UIBarButtonItem-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128BC1411E0EC2BC00D69F8E /* UIBarButtonItem-Extension.swift */; };
+		12AA377F20B3DEE8008D9A62 /* LPComposeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AA377E20B3DEE8008D9A62 /* LPComposeTextView.swift */; };
 		12D80F6220AEBCE2005B9983 /* LPHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D80F6120AEBCE2005B9983 /* LPHomeTableViewCell.swift */; };
 		12EB4F4D1EB389FB00A43391 /* LPWelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EB4F4B1EB389FB00A43391 /* LPWelcomeController.swift */; };
 		12EB4F4E1EB389FB00A43391 /* LPWelcomeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12EB4F4C1EB389FB00A43391 /* LPWelcomeController.xib */; };
@@ -58,6 +61,8 @@
 		1211BF031E0CF68900DDFA05 /* LPVisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPVisitorView.swift; sourceTree = "<group>"; };
 		1211BF051E0CF6BF00DDFA05 /* LPVisitorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LPVisitorView.xib; sourceTree = "<group>"; };
 		1211BF2A1E0D16AB00DDFA05 /* LPBaseVisitorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LPBaseVisitorController.swift; path = ../Visitor/LPBaseVisitorController.swift; sourceTree = "<group>"; };
+		1212F84E20B3A82200051323 /* LPComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPComposeViewController.swift; sourceTree = "<group>"; };
+		1212F85020B3BF7600051323 /* LPComposeTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPComposeTitleView.swift; sourceTree = "<group>"; };
 		1224B1FD1EB977130009057A /* LPHomeStatues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPHomeStatues.swift; sourceTree = "<group>"; };
 		1224B21F1EB9D8D40009057A /* NSDate-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate-Extension.swift"; sourceTree = "<group>"; };
 		122726B91E011B0700D56D22 /* LPStatus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LPStatus.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,6 +92,7 @@
 		127F198F1E08D178003CF9F3 /* MainVCSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MainVCSettings.json; sourceTree = "<group>"; };
 		128AA6E020B02566001D2D59 /* LPHomePicCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPHomePicCollectionView.swift; sourceTree = "<group>"; };
 		128BC1411E0EC2BC00D69F8E /* UIBarButtonItem-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem-Extension.swift"; sourceTree = "<group>"; };
+		12AA377E20B3DEE8008D9A62 /* LPComposeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPComposeTextView.swift; sourceTree = "<group>"; };
 		12D80F6120AEBCE2005B9983 /* LPHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LPHomeTableViewCell.swift; sourceTree = "<group>"; };
 		12EB4F4B1EB389FB00A43391 /* LPWelcomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPWelcomeController.swift; sourceTree = "<group>"; };
 		12EB4F4C1EB389FB00A43391 /* LPWelcomeController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LPWelcomeController.xib; sourceTree = "<group>"; };
@@ -115,6 +121,16 @@
 			path = Visitor;
 			sourceTree = "<group>";
 		};
+		1212F84D20B3A7FE00051323 /* Compose */ = {
+			isa = PBXGroup;
+			children = (
+				1212F84E20B3A82200051323 /* LPComposeViewController.swift */,
+				1212F85020B3BF7600051323 /* LPComposeTitleView.swift */,
+				12AA377E20B3DEE8008D9A62 /* LPComposeTextView.swift */,
+			);
+			path = Compose;
+			sourceTree = "<group>";
+		};
 		122726B01E011B0700D56D22 = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +152,7 @@
 		122726BB1E011B0700D56D22 /* LPStatus */ = {
 			isa = PBXGroup;
 			children = (
+				1212F84D20B3A7FE00051323 /* Compose */,
 				12EB4F4A1EB389C300A43391 /* Welcome */,
 				122726D01E012AFA00D56D22 /* Main */,
 				1232A0A11EB2D242000760FF /* Oauth */,
@@ -424,7 +441,9 @@
 				122726D81E01408000D56D22 /* LPHomeController.swift in Sources */,
 				1211BF011E0CB57500DDFA05 /* UIButton-Extension.swift in Sources */,
 				125C21431EB17FAC0002F7B9 /* LPNetworkingTools.swift in Sources */,
+				1212F85120B3BF7600051323 /* LPComposeTitleView.swift in Sources */,
 				120D17711E0F78DC00C323A3 /* LPPopoverController.swift in Sources */,
+				12AA377F20B3DEE8008D9A62 /* LPComposeTextView.swift in Sources */,
 				122726DC1E0140AF00D56D22 /* LPDiscoverController.swift in Sources */,
 				122726DA1E01409400D56D22 /* LPMessageController.swift in Sources */,
 				1224B1FE1EB977130009057A /* LPHomeStatues.swift in Sources */,
@@ -439,6 +458,7 @@
 				1211BF041E0CF68900DDFA05 /* LPVisitorView.swift in Sources */,
 				1232A0B11EB33F6B000760FF /* LPUserAccountViewModel.swift in Sources */,
 				1232A0AD1EB31804000760FF /* LPUserAccount.swift in Sources */,
+				1212F84F20B3A82200051323 /* LPComposeViewController.swift in Sources */,
 				128AA6E120B02566001D2D59 /* LPHomePicCollectionView.swift in Sources */,
 				1211BF2B1E0D16AB00DDFA05 /* LPBaseVisitorController.swift in Sources */,
 				122726D61E012E9D00D56D22 /* LPMainTabBarController.swift in Sources */,
