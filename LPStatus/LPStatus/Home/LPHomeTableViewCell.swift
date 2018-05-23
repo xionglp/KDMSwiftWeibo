@@ -14,7 +14,6 @@ private let picMargin: CGFloat = 10
 private let imageWH = (UIScreen.main.bounds.width - 2 * (mainMargin + picMargin)) / 3
 
 class LPHomeTableViewCell: UITableViewCell {
-    
     //MARK: -属性
     @IBOutlet weak var contentWCons: NSLayoutConstraint!
     @IBOutlet weak var picViewWCons: NSLayoutConstraint!
@@ -22,7 +21,6 @@ class LPHomeTableViewCell: UITableViewCell {
     @IBOutlet weak var BottomMarginCons: NSLayoutConstraint!
     @IBOutlet weak var picCollectionView: LPHomePicCollectionView!
     @IBOutlet weak var retweetTopCons: NSLayoutConstraint!
-    
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -73,7 +71,6 @@ class LPHomeTableViewCell: UITableViewCell {
             
             //设置转发微博的背景
             retweetView.isHidden = viewModel.homeStatus?.retweeted_status != nil ? false : true
-            
         }
     }
     
@@ -91,9 +88,7 @@ class LPHomeTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
-
 }
 
 extension LPHomeTableViewCell {

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="LPPicPickerCollectionViewCell" customModule="LPStatus" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="181" height="161"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="181" height="161"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WH0-sc-dW1">
+                        <rect key="frame" x="0.0" y="0.0" width="181" height="161"/>
+                        <state key="normal" backgroundImage="compose_pic_add"/>
+                        <connections>
+                            <action selector="clickAddPicture:" destination="gTV-IL-0wX" eventType="touchUpInside" id="F0T-st-LXH"/>
+                        </connections>
+                    </button>
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9hZ-W3-5Nm">
+                        <rect key="frame" x="157" y="0.0" width="24" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="glM-cr-IIQ"/>
+                            <constraint firstAttribute="width" constant="24" id="lyH-Ug-bnl"/>
+                        </constraints>
+                        <state key="normal" image="compose_photo_close"/>
+                        <connections>
+                            <action selector="clickDelectPicture:" destination="gTV-IL-0wX" eventType="touchUpInside" id="phC-AZ-3GP"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="WH0-sc-dW1" secondAttribute="bottom" id="BNL-Za-CF2"/>
+                <constraint firstItem="WH0-sc-dW1" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="JoU-XB-0P4"/>
+                <constraint firstAttribute="trailing" secondItem="9hZ-W3-5Nm" secondAttribute="trailing" id="Ky6-lI-dVm"/>
+                <constraint firstAttribute="trailing" secondItem="WH0-sc-dW1" secondAttribute="trailing" id="QaF-FG-2YQ"/>
+                <constraint firstItem="WH0-sc-dW1" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="cGg-Wr-lny"/>
+                <constraint firstItem="9hZ-W3-5Nm" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="fy4-7R-9Nx"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="181" height="161"/>
+            <point key="canvasLocation" x="-30.5" y="39.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="compose_photo_close" width="24" height="24"/>
+        <image name="compose_pic_add" width="70" height="70"/>
+    </resources>
+</document>

@@ -88,8 +88,6 @@ extension LPNetworkingTools {
 // MARK: - 请求首页微博数据  //escaping 转义
 extension LPNetworkingTools {
     func requestHomeStatuesData(accessToken : String, since_id: Int, max_id: Int, finished : @escaping(_ result : [[String : AnyObject]]?, _ error : NSError?) -> ()) -> () {
-        
-//        let parameters = ["access_token" : accessToken]
         let parameters = [
                         "access_token" : accessToken,
                         "since_id" : "\(since_id)",

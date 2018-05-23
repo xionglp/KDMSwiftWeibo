@@ -28,5 +28,9 @@ let userInfo_url = "\(common_url)2/users/show.json"
 let home_statues_url = "\(common_url)2/statuses/home_timeline.json"
 
 
+//选择照片的通知常量
+let picPickerNotificationName = Notification.Name(rawValue: "DownloadImageNotification")
+
+
 
 

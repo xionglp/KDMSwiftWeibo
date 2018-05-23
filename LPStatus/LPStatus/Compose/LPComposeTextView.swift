@@ -15,20 +15,17 @@ class LPComposeTextView: UITextView {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
         setupUI()
     }
-
 }
 
 extension LPComposeTextView {
     fileprivate func setupUI(){
         self .addSubview(placeholdelLabel)
-//        placeholdelLabel.snp.makeConstraints { (make) -> Void in
-//            make.top.equalTo(8)
-//            make.left.equalTo(10)
-//        }
-        placeholdelLabel.frame = CGRect(x: 10, y: 8, width: 100, height: 15)
+        placeholdelLabel.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(8)
+            make.left.equalTo(10)
+        }
         placeholdelLabel.font = font
         placeholdelLabel.textColor = UIColor.lightGray
         placeholdelLabel.text = "分享新鲜事..."
