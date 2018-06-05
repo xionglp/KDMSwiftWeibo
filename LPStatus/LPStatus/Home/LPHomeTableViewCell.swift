@@ -43,7 +43,9 @@ class LPHomeTableViewCell: UITableViewCell {
             nameLabel.text = viewModel.homeStatus?.statusUser?.screen_name
             dateLabel.text = viewModel.created_at_text
             sourceLabel.text = viewModel.sourceText
-            contentLabel.text = viewModel.homeStatus?.text
+//            contentLabel.text = viewModel.homeStatus?.text
+            let attribute = KDMFindEmoticon.shareIntance.findAttrString(statusText: viewModel.homeStatus?.text ?? "", font: contentLabel.font)
+            contentLabel.attributedText = attribute
             nameLabel.textColor = viewModel.vipImage == nil ? UIColor.black : UIColor.orange
             
             //根据配图的个数动态计算picView的尺寸
@@ -57,7 +59,9 @@ class LPHomeTableViewCell: UITableViewCell {
             //转发微博的正文
             if viewModel.homeStatus?.retweeted_status != nil {
                 if let screenName = viewModel.homeStatus?.retweeted_status?.statusUser?.screen_name, let retweetText = viewModel.homeStatus?.retweeted_status?.text {
-                    retweetLabel.text = "@" + "\(screenName): " + retweetText
+                    let retweetText : String = "@" + "\(screenName): " + retweetText
+                    let attribute = KDMFindEmoticon.shareIntance.findAttrString(statusText: retweetText, font: retweetLabel.font)
+                    retweetLabel.attributedText = attribute
                 }else{
                     retweetLabel.text = nil
                 }

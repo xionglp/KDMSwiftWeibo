@@ -43,6 +43,7 @@
 		122DFC2420C62AF100CD3091 /* KDMEmotionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122DFC1C20C62AF100CD3091 /* KDMEmotionCollectionViewCell.swift */; };
 		122DFC2520C62AF100CD3091 /* KDMEmotionPakeage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122DFC1D20C62AF100CD3091 /* KDMEmotionPakeage.swift */; };
 		122DFC2620C62AF100CD3091 /* KDMEmotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122DFC1E20C62AF100CD3091 /* KDMEmotion.swift */; };
+		122DFC5720C6809300CD3091 /* KDMFindEmoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122DFC5620C6809300CD3091 /* KDMFindEmoticon.swift */; };
 		1232A0A81EB2D490000760FF /* LPOauthLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1232A0A61EB2D490000760FF /* LPOauthLoginController.swift */; };
 		1232A0A91EB2D490000760FF /* LPOauthLoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1232A0A71EB2D490000760FF /* LPOauthLoginController.xib */; };
 		1232A0AB1EB2DAB2000760FF /* LPCommonConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1232A0AA1EB2DAB2000760FF /* LPCommonConstant.swift */; };
@@ -103,6 +104,7 @@
 		122DFC1C20C62AF100CD3091 /* KDMEmotionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDMEmotionCollectionViewCell.swift; sourceTree = "<group>"; };
 		122DFC1D20C62AF100CD3091 /* KDMEmotionPakeage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDMEmotionPakeage.swift; sourceTree = "<group>"; };
 		122DFC1E20C62AF100CD3091 /* KDMEmotion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDMEmotion.swift; sourceTree = "<group>"; };
+		122DFC5620C6809300CD3091 /* KDMFindEmoticon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDMFindEmoticon.swift; sourceTree = "<group>"; };
 		1232A0A61EB2D490000760FF /* LPOauthLoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPOauthLoginController.swift; sourceTree = "<group>"; };
 		1232A0A71EB2D490000760FF /* LPOauthLoginController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LPOauthLoginController.xib; sourceTree = "<group>"; };
 		1232A0AA1EB2DAB2000760FF /* LPCommonConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPCommonConstant.swift; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 				122DFC1C20C62AF100CD3091 /* KDMEmotionCollectionViewCell.swift */,
 				122DFC1D20C62AF100CD3091 /* KDMEmotionPakeage.swift */,
 				122DFC1E20C62AF100CD3091 /* KDMEmotion.swift */,
+				122DFC5620C6809300CD3091 /* KDMFindEmoticon.swift */,
 			);
 			name = Emotion;
 			path = ../../../KDMEmotions/KDMEmotions/Emotion;
@@ -504,6 +507,7 @@
 				122DFC2120C62AF100CD3091 /* KDMEmotionManager.swift in Sources */,
 				12040EE720B50AAF0057BA7B /* LPPicPickerCollectionView.swift in Sources */,
 				120D17711E0F78DC00C323A3 /* LPPopoverController.swift in Sources */,
+				122DFC5720C6809300CD3091 /* KDMFindEmoticon.swift in Sources */,
 				12AA377F20B3DEE8008D9A62 /* LPComposeTextView.swift in Sources */,
 				122726DC1E0140AF00D56D22 /* LPDiscoverController.swift in Sources */,
 				122DFC2520C62AF100CD3091 /* KDMEmotionPakeage.swift in Sources */,
