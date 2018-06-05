@@ -13,6 +13,12 @@ private let margin: CGFloat = 15
 
 class LPPicPickerCollectionView: UICollectionView {
     
+    var picImages: [UIImage] = [UIImage]() {
+        didSet{
+            reloadData()
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         register(UINib.init(nibName: "LPPicPickerCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: ID)
@@ -32,11 +38,12 @@ class LPPicPickerCollectionView: UICollectionView {
 
 extension LPPicPickerCollectionView : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return picImages.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: LPPicPickerCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: ID, for: indexPath) as! LPPicPickerCollectionViewCell
+        cell.picImage = indexPath.item <= picImages.count - 1 ? picImages[indexPath.item] : nil
         return cell
     }
 }

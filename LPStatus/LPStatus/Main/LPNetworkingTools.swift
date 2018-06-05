@@ -21,7 +21,6 @@ class LPNetworkingTools: AFHTTPSessionManager {
         let tools = LPNetworkingTools()
         // 相应序列化可接受的内容格式
         tools.responseSerializer.acceptableContentTypes = ["application/json", "text/json", "text/JavaScript", "text/html", "text/plain"]
-        
         return tools
     }()
 }
@@ -100,20 +99,49 @@ extension LPNetworkingTools {
                 finished (nil, error)
                 return
             }
-            
             let result = result as! [String : AnyObject]
-            
             finished (result["statuses"] as? [[String : AnyObject]], error)
         }
         
     }
 }
 
-
-
-
-
-
-
-
+// MARK: - 发送微博
+extension LPNetworkingTools {
+    //发布纯文字的微博
+    func requestSendStatus(statusText: String, isSuccess: @escaping(_ isSuccess : Bool) -> () ){
+        let urlString = send_statues_url
+        let parmeters = [
+            "access_token" : (LPUserAccountViewModel.shareInstance.account?.access_token)!,
+            "status" : statusText
+                        ]
+        request(methodType: .POST, urlString: urlString, parameters: parmeters as [String : AnyObject]) { (results, error) in
+            if results != nil {
+                isSuccess(true)
+            }else{
+                isSuccess(false)
+            }
+        }
+    }
+    
+    //发布带图片的微博
+    func requestSendStatus(statusText: String,image: UIImage , isSuccess: @escaping(_ isSuccess : Bool) -> () ){
+        
+        let urlString = send_statues_url
+        let parmeters = [
+            "access_token" : (LPUserAccountViewModel.shareInstance.account?.access_token)!,
+            "status" : statusText
+        ]
+        post(urlString, parameters: parmeters, constructingBodyWith: { (formData) in
+            if let imageData = UIImageJPEGRepresentation(image, 0.5){
+                formData.appendPart(withFileData: imageData, name: "pic", fileName: "123.png", mimeType: "image/png")
+            }
+        }, progress: nil, success: { (_, _) in
+            isSuccess(true)
+        }) { (_, error) in
+            isSuccess(false)
+            print(error)
+        }
+    }
+}
 

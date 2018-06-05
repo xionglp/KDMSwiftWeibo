@@ -38,7 +38,6 @@ class LPVisitorView: UIView {
         annimation.isRemovedOnCompletion = false
         //将动画添加到layer上面
         ratationView.layer.add(annimation, forKey: nil)
-        
     }
 
 }

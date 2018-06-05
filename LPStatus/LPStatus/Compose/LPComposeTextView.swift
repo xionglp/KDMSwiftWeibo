@@ -29,7 +29,6 @@ extension LPComposeTextView {
         placeholdelLabel.font = font
         placeholdelLabel.textColor = UIColor.lightGray
         placeholdelLabel.text = "分享新鲜事..."
-        
         textContainerInset = UIEdgeInsets(top: 6, left: 7, bottom: 0, right: 7)
     }
 }

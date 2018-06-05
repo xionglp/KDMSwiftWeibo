@@ -9,10 +9,26 @@
 import UIKit
 
 class LPPicPickerCollectionViewCell: UICollectionViewCell {
+    
+    @IBOutlet weak var delButton: UIButton!
+    @IBOutlet weak var selButton: UIButton!
+    @IBOutlet weak var picImageView: UIImageView!
+    var picImage: UIImage? {
+        didSet{
+            if picImage != nil {
+                selButton.isUserInteractionEnabled = false
+                picImageView.image = picImage
+                delButton.isHidden = false
+            }else{
+                selButton.isUserInteractionEnabled = true
+                picImageView.image = nil
+                delButton.isHidden = true
+            }
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     @IBAction func clickAddPicture(_ sender: Any) {
         //多层传递不适合用代理和闭包，可以用通知
@@ -20,6 +36,6 @@ class LPPicPickerCollectionViewCell: UICollectionViewCell {
     }
     
     @IBAction func clickDelectPicture(_ sender: Any) {
-        
+        NotificationCenter.default.post(name: deletePictureNotificationName, object: picImage)
     }
 }

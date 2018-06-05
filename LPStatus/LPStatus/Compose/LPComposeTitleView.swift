@@ -16,39 +16,26 @@ class LPComposeTitleView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         setupUI()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-
 }
 
 extension LPComposeTitleView {
     fileprivate func setupUI() {
         self .addSubview(titleL)
         self .addSubview(screenNameLabel)
-        
-        titleL.snp.makeConstraints { (make) -> Void in
-            make.centerX.equalTo(self.snp.centerX)
-            make.top.equalTo(self.snp.top)
-        }
-        titleL.backgroundColor = UIColor.red
-        
-        screenNameLabel.snp.makeConstraints { (make) -> Void in
-            make.centerX.equalTo(titleL.snp.centerX)
-            make.top.equalTo(titleL.snp.bottom).offset(3)
-        }
-        screenNameLabel.backgroundColor = UIColor.blue
-        
+        titleL.frame = CGRect.init(x: 0, y: 0, width: 100, height: 20)
         titleL.font = UIFont.systemFont(ofSize: 16)
+        titleL.textAlignment = .center
+        titleL.text = "发微博"
         screenNameLabel.font = UIFont.systemFont(ofSize: 14)
         screenNameLabel.textColor = UIColor.lightGray
-        
-        titleL.text = "发微博"
+        screenNameLabel.frame = CGRect.init(x: 0, y: 18, width: 100, height: 20)
+        screenNameLabel.textAlignment = .center
         screenNameLabel.text = LPUserAccountViewModel.shareInstance.account?.name!
-        
     }
 }

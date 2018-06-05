@@ -35,6 +35,14 @@
 		122A79031E0B70B0006D1B04 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 122A79011E0B70B0006D1B04 /* Discover.storyboard */; };
 		122A79051E0B70D3006D1B04 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 122A79041E0B70D3006D1B04 /* Profile.storyboard */; };
 		122A79081E0B7425006D1B04 /* Compose.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 122A79061E0B7425006D1B04 /* Compose.storyboard */; };
+		122DFC1F20C62AF100CD3091 /* KDMEmoticonAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122DFC1720C62AF100CD3091 /* KDMEmoticonAttachment.swift */; };
+		122DFC2020C62AF100CD3091 /* KDMEmotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122DFC1820C62AF100CD3091 /* KDMEmotionViewController.swift */; };
+		122DFC2120C62AF100CD3091 /* KDMEmotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122DFC1920C62AF100CD3091 /* KDMEmotionManager.swift */; };
+		122DFC2220C62AF100CD3091 /* Emoticons.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 122DFC1A20C62AF100CD3091 /* Emoticons.bundle */; };
+		122DFC2320C62AF100CD3091 /* UITextView-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122DFC1B20C62AF100CD3091 /* UITextView-Extension.swift */; };
+		122DFC2420C62AF100CD3091 /* KDMEmotionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122DFC1C20C62AF100CD3091 /* KDMEmotionCollectionViewCell.swift */; };
+		122DFC2520C62AF100CD3091 /* KDMEmotionPakeage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122DFC1D20C62AF100CD3091 /* KDMEmotionPakeage.swift */; };
+		122DFC2620C62AF100CD3091 /* KDMEmotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 122DFC1E20C62AF100CD3091 /* KDMEmotion.swift */; };
 		1232A0A81EB2D490000760FF /* LPOauthLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1232A0A61EB2D490000760FF /* LPOauthLoginController.swift */; };
 		1232A0A91EB2D490000760FF /* LPOauthLoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1232A0A71EB2D490000760FF /* LPOauthLoginController.xib */; };
 		1232A0AB1EB2DAB2000760FF /* LPCommonConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1232A0AA1EB2DAB2000760FF /* LPCommonConstant.swift */; };
@@ -87,6 +95,14 @@
 		122A79021E0B70B0006D1B04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Discover.storyboard; sourceTree = "<group>"; };
 		122A79041E0B70D3006D1B04 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		122A79071E0B7425006D1B04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Compose.storyboard; sourceTree = "<group>"; };
+		122DFC1720C62AF100CD3091 /* KDMEmoticonAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDMEmoticonAttachment.swift; sourceTree = "<group>"; };
+		122DFC1820C62AF100CD3091 /* KDMEmotionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDMEmotionViewController.swift; sourceTree = "<group>"; };
+		122DFC1920C62AF100CD3091 /* KDMEmotionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDMEmotionManager.swift; sourceTree = "<group>"; };
+		122DFC1A20C62AF100CD3091 /* Emoticons.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Emoticons.bundle; sourceTree = "<group>"; };
+		122DFC1B20C62AF100CD3091 /* UITextView-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView-Extension.swift"; sourceTree = "<group>"; };
+		122DFC1C20C62AF100CD3091 /* KDMEmotionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDMEmotionCollectionViewCell.swift; sourceTree = "<group>"; };
+		122DFC1D20C62AF100CD3091 /* KDMEmotionPakeage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDMEmotionPakeage.swift; sourceTree = "<group>"; };
+		122DFC1E20C62AF100CD3091 /* KDMEmotion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KDMEmotion.swift; sourceTree = "<group>"; };
 		1232A0A61EB2D490000760FF /* LPOauthLoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPOauthLoginController.swift; sourceTree = "<group>"; };
 		1232A0A71EB2D490000760FF /* LPOauthLoginController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LPOauthLoginController.xib; sourceTree = "<group>"; };
 		1232A0AA1EB2DAB2000760FF /* LPCommonConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LPCommonConstant.swift; sourceTree = "<group>"; };
@@ -179,6 +195,7 @@
 		122726BB1E011B0700D56D22 /* LPStatus */ = {
 			isa = PBXGroup;
 			children = (
+				122DFC1620C62AF100CD3091 /* Emotion */,
 				1212F84D20B3A7FE00051323 /* Compose */,
 				12EB4F4A1EB389C300A43391 /* Welcome */,
 				122726D01E012AFA00D56D22 /* Main */,
@@ -244,6 +261,22 @@
 				122726DD1E0140C700D56D22 /* LPProfileController.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		122DFC1620C62AF100CD3091 /* Emotion */ = {
+			isa = PBXGroup;
+			children = (
+				122DFC1720C62AF100CD3091 /* KDMEmoticonAttachment.swift */,
+				122DFC1820C62AF100CD3091 /* KDMEmotionViewController.swift */,
+				122DFC1920C62AF100CD3091 /* KDMEmotionManager.swift */,
+				122DFC1A20C62AF100CD3091 /* Emoticons.bundle */,
+				122DFC1B20C62AF100CD3091 /* UITextView-Extension.swift */,
+				122DFC1C20C62AF100CD3091 /* KDMEmotionCollectionViewCell.swift */,
+				122DFC1D20C62AF100CD3091 /* KDMEmotionPakeage.swift */,
+				122DFC1E20C62AF100CD3091 /* KDMEmotion.swift */,
+			);
+			name = Emotion;
+			path = ../../../KDMEmotions/KDMEmotions/Emotion;
 			sourceTree = "<group>";
 		};
 		1232A0A11EB2D242000760FF /* Oauth */ = {
@@ -377,6 +410,7 @@
 				1211BF061E0CF6BF00DDFA05 /* LPVisitorView.xib in Resources */,
 				120D17721E0F78DC00C323A3 /* LPPopoverController.xib in Resources */,
 				122726C41E011B0700D56D22 /* Assets.xcassets in Resources */,
+				122DFC2220C62AF100CD3091 /* Emoticons.bundle in Resources */,
 				127F19901E08D178003CF9F3 /* MainVCSettings.json in Resources */,
 				12EB4F4E1EB389FB00A43391 /* LPWelcomeController.xib in Resources */,
 				122A79001E0B7090006D1B04 /* Message.storyboard in Resources */,
@@ -462,17 +496,22 @@
 				128BC1421E0EC2BC00D69F8E /* UIBarButtonItem-Extension.swift in Sources */,
 				122726D81E01408000D56D22 /* LPHomeController.swift in Sources */,
 				12040EE520B4F75F0057BA7B /* AppDelegate.swift in Sources */,
+				122DFC2320C62AF100CD3091 /* UITextView-Extension.swift in Sources */,
 				1211BF011E0CB57500DDFA05 /* UIButton-Extension.swift in Sources */,
 				1253683620B3EE6E0005C74E /* LPComposePublicController.swift in Sources */,
 				125C21431EB17FAC0002F7B9 /* LPNetworkingTools.swift in Sources */,
 				1212F85120B3BF7600051323 /* LPComposeTitleView.swift in Sources */,
+				122DFC2120C62AF100CD3091 /* KDMEmotionManager.swift in Sources */,
 				12040EE720B50AAF0057BA7B /* LPPicPickerCollectionView.swift in Sources */,
 				120D17711E0F78DC00C323A3 /* LPPopoverController.swift in Sources */,
 				12AA377F20B3DEE8008D9A62 /* LPComposeTextView.swift in Sources */,
 				122726DC1E0140AF00D56D22 /* LPDiscoverController.swift in Sources */,
+				122DFC2520C62AF100CD3091 /* KDMEmotionPakeage.swift in Sources */,
 				12E79C9C20B5361400A4EBDE /* LPPicPickerCollectionViewCell.swift in Sources */,
 				122726DA1E01409400D56D22 /* LPMessageController.swift in Sources */,
+				122DFC2020C62AF100CD3091 /* KDMEmotionViewController.swift in Sources */,
 				1224B1FE1EB977130009057A /* LPHomeStatues.swift in Sources */,
+				122DFC2620C62AF100CD3091 /* KDMEmotion.swift in Sources */,
 				120D176E1E0F746E00C323A3 /* LPNaviCustomTItleButton.swift in Sources */,
 				1224B2201EB9D8D40009057A /* NSDate-Extension.swift in Sources */,
 				12D80F6220AEBCE2005B9983 /* LPHomeTableViewCell.swift in Sources */,
@@ -486,6 +525,8 @@
 				1232A0AD1EB31804000760FF /* LPUserAccount.swift in Sources */,
 				128AA6E120B02566001D2D59 /* LPHomePicCollectionView.swift in Sources */,
 				1211BF2B1E0D16AB00DDFA05 /* LPBaseVisitorController.swift in Sources */,
+				122DFC1F20C62AF100CD3091 /* KDMEmoticonAttachment.swift in Sources */,
+				122DFC2420C62AF100CD3091 /* KDMEmotionCollectionViewCell.swift in Sources */,
 				122726D61E012E9D00D56D22 /* LPMainTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

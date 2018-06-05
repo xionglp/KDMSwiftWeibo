@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -71,6 +71,9 @@
                                 <rect key="frame" x="238.5" y="10" width="24" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="compose_emoticonbutton_background"/>
+                                <connections>
+                                    <action selector="emoticonClick:" destination="-1" eventType="touchUpInside" id="0Hc-8g-YSu"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                         <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="fsh-OM-s15"/>
@@ -105,7 +108,7 @@
                 <constraint firstAttribute="bottom" secondItem="DsZ-nE-Ose" secondAttribute="bottom" id="NHq-4g-gUp"/>
                 <constraint firstAttribute="trailing" secondItem="DsZ-nE-Ose" secondAttribute="trailing" id="UVU-9a-mkZ"/>
                 <constraint firstItem="ZPL-OF-iYj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ZpV-dz-TQs"/>
-                <constraint firstItem="ZPL-OF-iYj" firstAttribute="top" secondItem="7Dx-Jm-ZEo" secondAttribute="bottom" id="jgH-5n-L2K"/>
+                <constraint firstAttribute="bottom" secondItem="7Dx-Jm-ZEo" secondAttribute="bottom" constant="44" id="jgH-5n-L2K"/>
                 <constraint firstItem="DsZ-nE-Ose" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="oG1-FG-P1Q"/>
                 <constraint firstAttribute="bottom" secondItem="ZPL-OF-iYj" secondAttribute="bottom" id="r72-JY-dbN"/>
                 <constraint firstAttribute="trailing" secondItem="ZPL-OF-iYj" secondAttribute="trailing" id="rXL-9N-5Zw"/>

@@ -26,6 +26,9 @@
                             <action selector="clickAddPicture:" destination="gTV-IL-0wX" eventType="touchUpInside" id="F0T-st-LXH"/>
                         </connections>
                     </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y9O-Yf-qsf">
+                        <rect key="frame" x="0.0" y="0.0" width="181" height="161"/>
+                    </imageView>
                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9hZ-W3-5Nm">
                         <rect key="frame" x="157" y="0.0" width="24" height="24"/>
                         <constraints>
@@ -40,15 +43,24 @@
                 </subviews>
             </view>
             <constraints>
+                <constraint firstItem="y9O-Yf-qsf" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="2GQ-Qe-M4k"/>
                 <constraint firstAttribute="bottom" secondItem="WH0-sc-dW1" secondAttribute="bottom" id="BNL-Za-CF2"/>
                 <constraint firstItem="WH0-sc-dW1" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="JoU-XB-0P4"/>
                 <constraint firstAttribute="trailing" secondItem="9hZ-W3-5Nm" secondAttribute="trailing" id="Ky6-lI-dVm"/>
+                <constraint firstAttribute="bottom" secondItem="y9O-Yf-qsf" secondAttribute="bottom" id="Pzk-KR-zZt"/>
                 <constraint firstAttribute="trailing" secondItem="WH0-sc-dW1" secondAttribute="trailing" id="QaF-FG-2YQ"/>
+                <constraint firstAttribute="trailing" secondItem="y9O-Yf-qsf" secondAttribute="trailing" id="WQh-nX-Wbn"/>
+                <constraint firstItem="y9O-Yf-qsf" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="a05-ig-gJV"/>
                 <constraint firstItem="WH0-sc-dW1" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="cGg-Wr-lny"/>
                 <constraint firstItem="9hZ-W3-5Nm" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="fy4-7R-9Nx"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="181" height="161"/>
+            <connections>
+                <outlet property="delButton" destination="9hZ-W3-5Nm" id="5Gx-WC-WMA"/>
+                <outlet property="picImageView" destination="y9O-Yf-qsf" id="GYO-SC-Fhl"/>
+                <outlet property="selButton" destination="WH0-sc-dW1" id="xIS-a3-Qhx"/>
+            </connections>
             <point key="canvasLocation" x="-30.5" y="39.5"/>
         </collectionViewCell>
     </objects>

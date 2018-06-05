@@ -33,7 +33,6 @@ class LPUserAccountViewModel {
      // 反归档，拿到账号信息
     init() {
         account = NSKeyedUnarchiver.unarchiveObject(withFile: accountPath) as? LPUserAccount
-        print(account?.access_token)
     }
     
 }

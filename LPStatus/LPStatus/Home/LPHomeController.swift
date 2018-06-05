@@ -48,7 +48,7 @@ import MJRefresh
 // MARK: - 请求数据
 extension LPHomeController{
     fileprivate func requestStatuesData(loadNewData: Bool){
-        
+        // loadNewData==true, 下拉刷新加载最新的数据
         // 获取since_id/max_id, 加载最新数据和更多数据要用到
         var since_id = 0
         var max_id = 0
@@ -77,12 +77,7 @@ extension LPHomeController{
                 tempStatus.append(statusViewModel)
             }
             
-            if loadNewData {
-                self.statusArr = tempStatus + self.statusArr
-            }else {
-                self.statusArr += tempStatus
-            }
-            
+            self.statusArr = loadNewData == true ? tempStatus + self.statusArr : self.statusArr + tempStatus
             //显示顶部提示框
             self.showTipLabel(count: tempStatus.count)
             self.homeTableView.reloadData()

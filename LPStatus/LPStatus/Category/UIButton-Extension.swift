@@ -10,7 +10,6 @@ import UIKit
 
 // MARK: - 对按钮做一个扩展 （相当于objc的分类）
 extension UIButton {
-    
     //swift中类方法已class开头，相当于objc中类方法已+开头
     //扩展一个类方法
     class func createButtonToImage(imageName : String, bgImageName : String) -> UIButton{
@@ -35,5 +34,4 @@ extension UIButton {
         setImage(UIImage(named:imageName + "_highlighted"), for: .highlighted)
         sizeToFit() // 设置按钮的尺寸，就是图片的大小
     }
-
 }
